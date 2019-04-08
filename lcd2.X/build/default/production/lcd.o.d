@@ -10,7 +10,6 @@ build/default/production/lcd.o.d build/default/production/lcd.o: lcd.c \
  /Applications/microchip/xc8/v2.05/avr/avr/include/avr/version.h \
  /Applications/microchip/xc8/v2.05/avr/avr/include/avr/fuse.h \
  /Applications/microchip/xc8/v2.05/avr/avr/include/avr/lock.h \
- /Applications/microchip/xc8/v2.05/avr/avr/include/avr/interrupt.h \
  /Applications/microchip/xc8/v2.05/avr/avr/include/util/delay.h \
  /Applications/microchip/xc8/v2.05/avr/avr/include/util/delay_basic.h \
  /Applications/microchip/xc8/v2.05/avr/avr/include/math.h
@@ -36,8 +35,6 @@ build/default/production/lcd.o.d build/default/production/lcd.o: lcd.c \
 /Applications/microchip/xc8/v2.05/avr/avr/include/avr/fuse.h:
 
 /Applications/microchip/xc8/v2.05/avr/avr/include/avr/lock.h:
-
-/Applications/microchip/xc8/v2.05/avr/avr/include/avr/interrupt.h:
 
 /Applications/microchip/xc8/v2.05/avr/avr/include/util/delay.h:
 
