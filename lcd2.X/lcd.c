@@ -41,9 +41,12 @@
 
 
 // Pin config
-#define RS PC4
-// #define RW PC1
-#define E PC5
+#define RS PORTC4
+#define RW PORTB4
+#define E PORTC5
+#define ledBar PORTB
+#define _ledBar DDRB
+#define lcdBusy PORTB3
 
 #define lcd PORTC
 #define _lcd DDRC
@@ -58,67 +61,58 @@
 
 
 //Prototypes
-void lcd_ecrire( unsigned char data );
-int lcd_lire( int _RS );
+// void lcd_ecrire( unsigned char data );
+// int lcd_lire( int _RS );
 void lcd_initializer4();
-int lcd_occupe();
-void setCursor( int pos );
+// int lcd_occupe();
+// void setCursor( int pos );
 void habiliter();
 void charger(unsigned char data);
-void lcd_print( unsigned char data);
+// void lcd_print( unsigned char data);
+void busyLcd();
 
-void lcd_ecrire( unsigned char data ){
-    // lcd &= ~(1<<E);
-    // charger(data >> 4);
-    // charger(data);
-}
+// void lcd_ecrire( unsigned char data ){
+//     // lcd &= ~(1<<E);
+//     // charger(data >> 4);
+//     // charger(data);
+// }
 
 // Carga el nibble menos significativo a la lcd
 void charger(unsigned char data){
-    lcd |= data & 0x0F;
+    lcd &= ~((1<<RS)|(1<<E));
+    lcd |= (data & 0x0F);
     habiliter();
+    
 }
 
 void habiliter(){
     lcd |= (1<<E);
-    _delay_us(1);
+    _delay_ms(1);
     lcd &= ~(1<<E);
-    _delay_us(1);
+    _delay_ms(200);
+}
+
+void busyLcd(){
+    char bFlag;
+    lcd &= ~(1<<RS);
+    ledBar |= (1<<RW);
+    while((lcd & ~(1<<lcdBusy)) == (1<<lcdBusy))
+        ;
+    ledBar &= ~(1<<RW);
 }
 
 void lcd_initializer4(){
-    _delay_ms(30);
-    lcd &= ~(1<<RS);
+    _delay_ms(100);
+    lcd &= ~((1<<RS)|(1<<E));
     
-    // Init
-    charger(fSet8);
-    _delay_ms(10);
-    charger(fSet8);
-    _delay_ms(10);
-    charger(fSet8);
-    _delay_ms(10);
-    charger(fSet4);
-    _delay_ms(10);
+    charger(3);
+    _delay_ms(1);
+    charger(3);
+    _delay_ms(1);
+    charger(3);
+    _delay_ms(1);
 
-    // Function set
-    charger(fSet4);
-    charger(fSetLine);
-    _delay_ms(10);
-
-    // Entry Mode set
-    charger(eModeSet1);
-    charger(eModeSet2);
-    _delay_ms(10);
-
-    // Display control
-    charger(dON);
-    charger(dBlink);
-    _delay_ms(10);
-
-    // Display clear
-    charger(dClear1);
-    charger(dClear2);
-    _delay_ms(10);
+    busyLcd();
 
 }
 
