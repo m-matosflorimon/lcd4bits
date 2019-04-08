@@ -337,41 +337,41 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0x50
+.debug_aranges  0x0000000000000000       0x60
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x50 build/default/production/lcd.o
+                0x0000000000000000       0x60 build/default/production/lcd.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xbcb
+.debug_info     0x0000000000000000      0xcb6
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x5f4 /Applications/microchip/xc8/v2.05/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_info    0x00000000000005f4      0x5d7 build/default/production/lcd.o
+ .debug_info    0x00000000000005f4      0x6c2 build/default/production/lcd.o
 
-.debug_abbrev   0x0000000000000000      0x739
+.debug_abbrev   0x0000000000000000      0x742
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x5a2 /Applications/microchip/xc8/v2.05/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_abbrev  0x00000000000005a2      0x197 build/default/production/lcd.o
+ .debug_abbrev  0x00000000000005a2      0x1a0 build/default/production/lcd.o
 
-.debug_line     0x0000000000000000      0x22b
+.debug_line     0x0000000000000000      0x245
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000       0x1a /Applications/microchip/xc8/v2.05/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_line    0x000000000000001a      0x211 build/default/production/lcd.o
+ .debug_line    0x000000000000001a      0x22b build/default/production/lcd.o
 
-.debug_frame    0x0000000000000000       0xc8
+.debug_frame    0x0000000000000000       0xe8
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0xc8 build/default/production/lcd.o
+ .debug_frame   0x0000000000000000       0xe8 build/default/production/lcd.o
 
 .debug_str      0x0000000000000000      0x208
  *(.debug_str)
  .debug_str     0x0000000000000000      0x208 /Applications/microchip/xc8/v2.05/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/crtatmega328p.o
  .debug_str     0x0000000000000208        0x0 build/default/production/lcd.o
 
-.debug_loc      0x0000000000000000      0x247
+.debug_loc      0x0000000000000000      0x289
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x247 build/default/production/lcd.o
+ .debug_loc     0x0000000000000000      0x289 build/default/production/lcd.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -391,9 +391,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0x40
+.debug_ranges   0x0000000000000000       0x50
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x40 build/default/production/lcd.o
+ .debug_ranges  0x0000000000000000       0x50 build/default/production/lcd.o
 
 .debug_macro
  *(.debug_macro)
@@ -401,34 +401,34 @@ OUTPUT(dist/default/production/lcd2.X.production.elf elf32-avr)
 LOAD linker stubs
 LOAD data_init
 
-.text           0x0000000000000214        0x4
- .text          0x0000000000000214        0x4 /Applications/microchip/xc8/v2.05/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/crtatmega328p.o
-                0x0000000000000214                __vector_20
-                0x0000000000000214                __vector_1
-                0x0000000000000214                __vector_24
-                0x0000000000000214                __vector_12
-                0x0000000000000214                __bad_interrupt
-                0x0000000000000214                __vector_6
-                0x0000000000000214                __vector_3
-                0x0000000000000214                __vector_23
-                0x0000000000000214                __vector_25
-                0x0000000000000214                __vector_11
-                0x0000000000000214                __vector_13
-                0x0000000000000214                __vector_17
-                0x0000000000000214                __vector_19
-                0x0000000000000214                __vector_7
-                0x0000000000000214                __vector_5
-                0x0000000000000214                __vector_4
-                0x0000000000000214                __vector_9
-                0x0000000000000214                __vector_2
-                0x0000000000000214                __vector_21
-                0x0000000000000214                __vector_15
-                0x0000000000000214                __vector_8
-                0x0000000000000214                __vector_14
-                0x0000000000000214                __vector_10
-                0x0000000000000214                __vector_16
-                0x0000000000000214                __vector_18
-                0x0000000000000214                __vector_22
+.text           0x0000000000000222        0x4
+ .text          0x0000000000000222        0x4 /Applications/microchip/xc8/v2.05/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/crtatmega328p.o
+                0x0000000000000222                __vector_20
+                0x0000000000000222                __vector_1
+                0x0000000000000222                __vector_24
+                0x0000000000000222                __vector_12
+                0x0000000000000222                __bad_interrupt
+                0x0000000000000222                __vector_6
+                0x0000000000000222                __vector_3
+                0x0000000000000222                __vector_23
+                0x0000000000000222                __vector_25
+                0x0000000000000222                __vector_11
+                0x0000000000000222                __vector_13
+                0x0000000000000222                __vector_17
+                0x0000000000000222                __vector_19
+                0x0000000000000222                __vector_7
+                0x0000000000000222                __vector_5
+                0x0000000000000222                __vector_4
+                0x0000000000000222                __vector_9
+                0x0000000000000222                __vector_2
+                0x0000000000000222                __vector_21
+                0x0000000000000222                __vector_15
+                0x0000000000000222                __vector_8
+                0x0000000000000222                __vector_14
+                0x0000000000000222                __vector_10
+                0x0000000000000222                __vector_16
+                0x0000000000000222                __vector_18
+                0x0000000000000222                __vector_22
 
 .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x40
@@ -436,22 +436,33 @@ LOAD data_init
                 0x0000000000000000       0x40 /Applications/microchip/xc8/v2.05/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const/crtatmega328p.o
 
 .text.habiliter
-                0x00000000000001ba       0x1e
+                0x00000000000001c0       0x1e
  .text.habiliter
-                0x00000000000001ba       0x1e build/default/production/lcd.o
-                0x00000000000001ba                habiliter
+                0x00000000000001c0       0x1e build/default/production/lcd.o
+                0x00000000000001c0                habiliter
 
-.text.charger   0x00000000000001d8       0x1e
- .text.charger  0x00000000000001d8       0x1e build/default/production/lcd.o
-                0x00000000000001d8                charger
+.text.charger   0x000000000000020e        0xa
+ .text.charger  0x000000000000020e        0xa build/default/production/lcd.o
+                0x000000000000020e                charger
+
+.text.chargerInst
+                0x00000000000001de       0x18
+ .text.chargerInst
+                0x00000000000001de       0x18 build/default/production/lcd.o
+                0x00000000000001de                chargerInst
+
+.text.chargerD  0x0000000000000218        0xa
+ .text.chargerD
+                0x0000000000000218        0xa build/default/production/lcd.o
+                0x0000000000000218                chargerD
 
 .text.lcdEcrire
-                0x00000000000001f6       0x1e
+                0x00000000000001f6       0x18
  .text.lcdEcrire
-                0x00000000000001f6       0x1e build/default/production/lcd.o
+                0x00000000000001f6       0x18 build/default/production/lcd.o
                 0x00000000000001f6                lcdEcrire
 
-.rodata         0x0000000000800100        0x6 load address 0x0000000000000218
+.rodata         0x0000000000800100        0x6 load address 0x0000000000000226
  .rodata        0x0000000000800100        0x6 build/default/production/lcd.o
 
 .text.lcdInitialiser4
@@ -469,6 +480,6 @@ LOAD data_init
  .progmemx.data
                 0x00000000000000c4       0x16 build/default/production/lcd.o
 
-.text.main      0x0000000000000194       0x26
- .text.main     0x0000000000000194       0x26 build/default/production/lcd.o
+.text.main      0x0000000000000194       0x2c
+ .text.main     0x0000000000000194       0x2c build/default/production/lcd.o
                 0x0000000000000194                main

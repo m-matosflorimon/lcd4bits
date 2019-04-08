@@ -15,33 +15,38 @@
 #define d6 2
 #define d7 3
 
-void charger( char a);
+void charger( char a );
+void chargerInst( char a);
 void lcdEcrire( char a);
 void habiliter();
 void lcdInitialiser4();
 void lcdPrint(const char *p);
 void lcdCursor(int a, int b);
 
-// Carga una instruccion a la lcd
-void charger( char a){
-	lcd = (a >> 4) & 0x0F;
-	lcd &=~(1<<rs);
-    habiliter();
-	
-	lcd = a & 0x0F;
+// Carga una instruccion a la lcd en 4 bits
+void chargerInst( char a){
+	charger((a >> 4) & 0x0F);
+    charger(a & 0x0F);
+}
+
+// Carga la lcd con una instruccion
+void charger( char a ){
+    lcd = a;
 	lcd &=~(1<<rs);
     habiliter();
 }
 
-// Carga un dato a la lcd
+// Carga la lcd con un dato
+void chargerD( char a ){
+    lcd = a;
+    lcd |=(1<<rs);
+	habiliter();
+}
+
+// Carga un dato a la lcd en 4 bits
 void lcdEcrire( char a){
-    lcd = (a >> 4) & 0x0F;
-	lcd |=(1<<rs);
-	habiliter();
-	
-    lcd = a & 0x0F;
-	lcd |=(1<<rs);
-	habiliter();
+	chargerD((a >> 4) & 0x0F);
+    chargerD(a & 0x0F);
 }
 
 // Da un pulso al Enable
@@ -60,10 +65,11 @@ void lcdInitialiser4(){
 	_delay_ms(2);
 
     for(int i = 0 ; i < 6 ; i++){
-        charger(commands[i]);
+        chargerInst(commands[i]);
     }
 }
 
+// Imprime un string en la lcd
 void lcdPrint(const char *p){
 	while(*p != '\0'){
 		lcdEcrire(*p);
@@ -72,22 +78,20 @@ void lcdPrint(const char *p){
 	}
 }
 
+// Setea el cursor de la lcd (solo funciona para 16x2)
 void lcdCursor(int a, int b){
-    charger((0x80 + b*0x40) | a);
+    chargerInst((0x80 + b*0x40) | a);
 }
-
 
 int main(){
 
     lcdInitialiser4();
 
-	while(1){
-	
 	lcdCursor(0,0);
 	lcdPrint("Miguel");
 	lcdCursor(0,1);
 	lcdPrint("Ta pile jalto!");
+    lcdCursor(0,0);
 	while(1);	
-	}
-	
+
 }
